@@ -7,11 +7,11 @@ mongoose
 const productsSchema = new mongoose.Schema({
    name: {
       type: String,
-      // required: true,
+      required: true,
    },
    unitPrice: {
       type: Number,
-      // required: true,
+      required: true,
    },
    stock: {
       type: Number,
@@ -19,16 +19,15 @@ const productsSchema = new mongoose.Schema({
    },
    description: {
       type: String,
-      // required: true,
+      required: true,
    },
    images: [String],
    catagory: String,
-   // addedBy: {
-   //    type: mongoose.Schema.Types.ObjectId,
-   //    required: true,
-   //    populate: true,
-   // },
+   addedBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      populate: true,
+   },
 })
 
-const productsModel = mongoose.model('products', productsSchema)
-module.exports = productsModel
+module.exports = mongoose.model('products', productsSchema)

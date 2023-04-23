@@ -1,0 +1,16 @@
+### user route test
+GET http://127.0.0.1:3000/api/users/adfadflkajdf3223
+
+###
+POST http://127.0.0.1:3000/api/users
+Content-Type: application/json
+
+{
+   "user": {
+      "name":"jhonny depp",
+      "email":"example@email.com",
+      "password":"password"
+   }
+}
+
+### product route test
