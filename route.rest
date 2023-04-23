@@ -14,3 +14,43 @@ Content-Type: application/json
 }
 
 ### product route test
+GET http://127.0.0.1:3000/api/products
+
+###
+POST http://127.0.0.1:3000/api/products
+Content-Type: application/json
+
+{
+   "product": {
+    "name": "Product 120",
+    "unitPrice": 16,
+    "stock": 4,
+    "description": "This is product 10",
+    "images": "[\"https://example.com/product10/image1.jpg\", \"https://example.com/product10/image2.jpg\"]",
+    "catagory": "type 1",
+    "addedBy": "6444d73cf406c1815b23fe27"
+  }
+}
+
+### product route test
+GET http://127.0.0.1:3000/api/products/6444de0925312271d7f3079d
+
+
+###
+PUT http://127.0.0.1:3000/api/products/6444de0925312271d7f3079d
+Content-Type: application/json
+
+{
+   "product": {
+    "name": "Product 12",
+    "unitPrice": 16,
+    "stock": 41,
+    "description": "This is product 10",
+    "images": "[\"https://example.com/product10/image1.jpg\", \"https://example.com/product10/image2.jpg\"]",
+    "catagory": "type 1",
+    "addedBy": "6444d73cf406c1815b23fe27"
+  }
+}
+###
+DELETE http://127.0.0.1:3000/api/products/6444de0925312271d7f3079d
+
