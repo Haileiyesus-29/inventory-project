@@ -8,7 +8,7 @@ Content-Type: application/json
 {
    "user": {
       "name":"jhonny depp",
-      "email":"test@email.com",
+      "email":"test1212@email.com",
       "password":"password"
    }
 }
@@ -33,7 +33,7 @@ Content-Type: application/json
 }
 
 ### product route test
-GET http://127.0.0.1:3000/api/products/64432956957d5d39947dd16a
+GET http://127.0.0.1:3000/api/products/644375a1f3a60d538c52a784
 
 
 ###

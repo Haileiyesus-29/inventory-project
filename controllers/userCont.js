@@ -9,6 +9,7 @@ const getUserById = async (req, res) => {
    }
 }
 const createUser = async (req, res) => {
+   console.log(req.body.user)
    try {
       const user = new users(req.body.user)
       await user.save()
