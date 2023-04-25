@@ -1,8 +1,10 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const jwt = require('jsonwebtoken')
+
 const app = express()
-require('dotenv').config()
 
 // connect to MongoDB
 mongoose.connect(process.env.DB_URI).catch(err => console.log(err.message))

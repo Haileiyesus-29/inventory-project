@@ -1,56 +1,15 @@
 const express = require('express')
 const routes = express.Router()
-const users = require('../models/usersDB')
-const products = require('../models/productsDB')
+const productCont = require('../controllers/productCont')
 
-routes.get('/', async (req, res) => {
-   try {
-      const productList = await products.find()
-      res.status(200).json(productList)
-   } catch (error) {
-      res.status(500).send('INTERNAL SERVER FAILURE')
-   }
-})
+routes.get('/', productCont.getAllProduct)
 
-routes.post('/', async (req, res) => {
-   try {
-      const product = new products(req.body.product)
-      await product.save()
-      res.status(201).json(product)
-   } catch (error) {
-      res.status(400).json(product)
-   }
-})
+routes.post('/', productCont.createProduct)
 
-routes.get('/:id', async (req, res) => {
-   try {
-      const product = await products.findById(req.params.id)
-      res.status(200).json(product)
-   } catch (error) {
-      res.status(404).send('NOT FOUND')
-   }
-})
+routes.get('/:id', productCont.getProductById)
 
-routes.put('/:id', async (req, res) => {
-   try {
-      const product = await products.findByIdAndUpdate(
-         req.params.id,
-         req.body.product
-      )
-      res.status(201).json(product)
-   } catch (error) {
-      res.status(400).send('BAD REQUEST')
-   }
-})
+routes.put('/:id', productCont.updateProduct)
 
-routes.delete('/:id', async (req, res) => {
-   try {
-      const product = await products.findByIdAndDelete(req.params.id)
-      if (!product) throw new Error()
-      res.status(200).json(product)
-   } catch (error) {
-      res.status(404).send('NOT FOUND')
-   }
-})
+routes.delete('/:id', productCont.deleteProduct)
 
 module.exports = routes
