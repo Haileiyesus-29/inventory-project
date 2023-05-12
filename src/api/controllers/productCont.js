@@ -10,7 +10,7 @@ const getAllProduct = async (req, res) => {
 }
 const createProduct = async (req, res) => {
    try {
-      const product = new products(req.body.product)
+      const product = new products(req.body)
       await product.save()
       res.status(201).json(product)
    } catch (error) {
@@ -21,7 +21,7 @@ const getProductById = async (req, res) => {
    try {
       const product = await products.findById(req.params.id)
       product
-         ? res.status(201).json(product)
+         ? res.status(200).json(product)
          : res.status(404).send('NOT FOUND')
    } catch (error) {
       res.status(404).send('NOT FOUND')
@@ -31,10 +31,11 @@ const updateProduct = async (req, res) => {
    try {
       const product = await products.findByIdAndUpdate(
          req.params.id,
-         req.body.product
+         req.body,
+         { new: true }
       )
       product
-         ? res.status(201).json(product)
+         ? res.status(200).json(product)
          : res.status(404).send('NOT FOUND')
    } catch (error) {
       res.status(400).send('BAD REQUEST')
@@ -43,8 +44,7 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
    try {
       const product = await products.findByIdAndDelete(req.params.id)
-      if (!product) throw new Error()
-      res.status(200).json(product)
+      res.status(204).json(product)
    } catch (error) {
       res.status(404).send('NOT FOUND')
    }

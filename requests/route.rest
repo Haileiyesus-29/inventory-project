@@ -8,7 +8,7 @@ Content-Type: application/json
 {
    "user": {
       "name":"jhonny depp",
-      "email":"te212@email.com",
+      "email":"te21223@email.com",
       "password":"password"
    }
 }
@@ -52,4 +52,5 @@ Content-Type: application/json
   }
 }
 ###
-DELETE http://127.0.0.1:3000/api/products/64485bb1bcd36518a3ee2cbc
+DELETE http://127.0.0.1:3000/api/products/644a448bcd1cdf577954fe2e
+
