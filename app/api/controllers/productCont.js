@@ -5,32 +5,32 @@ const getAllProduct = async (req, res) => {
       path: 'addedBy',
       select: 'name email _id',
    })
-   if (!productList) throw new Error('server failure')
    res.status(200).json(productList)
 }
 
 const createProduct = async (req, res) => {
    const product = new Product(req.body)
-
    await product.save()
-   if (!product) throw new Error('invalid data')
+   if (!product) throw new Error({ message: 'Bad Request', status: 400 })
    res.status(201).json(product)
 }
+
 const getProductById = async (req, res) => {
    const product = await Product.findById(req.params.id)
-   if (!product) throw new Error('not found')
+   if (!product) throw new Error({ message: 'Not Found', status: 404 })
    res.status(200).json(product)
 }
+
 const updateProduct = async (req, res) => {
    const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
    })
-   if (!product) throw new Error('not found')
+   if (!product) throw new Error({ message: 'Not Found', status: 404 })
    res.status(200).json(product)
 }
 const deleteProduct = async (req, res) => {
    const product = await Product.findByIdAndDelete(req.params.id)
-   if (!product) throw new Error('not found')
+   if (!product) throw new Error({ message: 'Not Found', status: 404 })
    res.status(204).json(product)
 }
 

@@ -2,8 +2,10 @@ require('express-async-errors')
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
-const { errorHandler } = require('./api/middlewares/errorHandler')
-const jwt = require('jsonwebtoken')
+const {
+   clientErrorHanlder,
+   mongooseErrorHanlder,
+} = require('./api/middlewares/errorHandler')
 
 const app = express()
 
@@ -25,6 +27,9 @@ app.get('/status', (req, res) => {
 app.use((req, res) => {
    res.status(404).json({ status: 'NOT FOUND' })
 })
-app.use(errorHandler)
+
+// Error handling middlewares
+app.use(clientErrorHanlder)
+app.use(mongooseErrorHanlder)
 
 module.exports = app
