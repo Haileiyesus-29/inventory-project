@@ -33,11 +33,11 @@ Content-Type: application/json
 }
 
 ### product route test
-GET http://127.0.0.1:3000/api/products/64485b74b7def3c30841720c
+GET http://127.0.0.1:3000/api/products/645ea4fb8e288d7a7c6a4246
 
 
 ###
-PUT http://127.0.0.1:3000/api/products/64485b74b7def3c30841720c
+PUT http://127.0.0.1:3000/api/products/64525eaa4954ed363089dbe1
 Content-Type: application/json
 
 {
@@ -52,5 +52,5 @@ Content-Type: application/json
   }
 }
 ###
-DELETE http://127.0.0.1:3000/api/products/644a448bcd1cdf577954fe2e
+DELETE http://127.0.0.1:3000/api/products/64525eaa4954ed363089dbe1
 

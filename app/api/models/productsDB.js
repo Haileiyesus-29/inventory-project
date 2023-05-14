@@ -1,17 +1,13 @@
 const mongoose = require('mongoose')
 
-mongoose
-   .connect('mongodb://127.0.0.1:27017/inventory')
-   .catch(err => console.log(err.message))
-
 const productsSchema = new mongoose.Schema({
    name: {
       type: String,
-      // required: true,
+      required: true,
    },
    unitPrice: {
       type: Number,
-      // required: true,
+      required: true,
    },
    stock: {
       type: Number,
@@ -19,14 +15,14 @@ const productsSchema = new mongoose.Schema({
    },
    description: {
       type: String,
-      // required: true,
+      required: true,
    },
    images: [String],
    catagory: String,
    addedBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'users',
-      // required: true,
+      required: true,
    },
 })
 

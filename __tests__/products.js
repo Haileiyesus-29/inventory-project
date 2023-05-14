@@ -1,4 +1,4 @@
-const app = require('../src/app')
+const app = require('../app/app')
 const request = require('supertest')
 
 describe('Test /api/products', () => {

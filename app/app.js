@@ -1,15 +1,11 @@
 require('express-async-errors')
 require('dotenv').config()
 const express = require('express')
-const mongoose = require('mongoose')
 const cors = require('cors')
 const { errorHandler } = require('./api/middlewares/errorHandler')
 const jwt = require('jsonwebtoken')
 
 const app = express()
-
-// connect to MongoDB
-mongoose.connect(process.env.DB_URI).catch(err => console.log(err.message))
 
 app.use(express.static('static'))
 app.use(cors())
