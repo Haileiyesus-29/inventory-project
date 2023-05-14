@@ -1,9 +1,5 @@
 const mongoose = require('mongoose')
 
-mongoose
-   .connect('mongodb://127.0.0.1:27017/inventory')
-   .catch(err => console.log(err.message))
-
 const productsSchema = new mongoose.Schema({
    name: {
       type: String,
@@ -27,8 +23,14 @@ const productsSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'users',
       required: true,
-      populate: true,
    },
 })
 
+productsSchema.set('toJSON', {
+   transform: (_, obj) => {
+      obj.id = obj._id
+      delete obj._id
+      delete obj.__v
+   },
+})
 module.exports = mongoose.model('products', productsSchema)

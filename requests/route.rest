@@ -1,5 +1,5 @@
 ### user route test
-GET http://127.0.0.1:3000/api/users/adfadflkajdf3223
+GET http://127.0.0.1:3000/api/users/64485af166e2cfdb1a6386c4
 
 ###
 POST http://127.0.0.1:3000/api/users
@@ -8,7 +8,7 @@ Content-Type: application/json
 {
    "user": {
       "name":"jhonny depp",
-      "email":"example@email.com",
+      "email":"te21223@email.com",
       "password":"password"
    }
 }
@@ -33,11 +33,11 @@ Content-Type: application/json
 }
 
 ### product route test
-GET http://127.0.0.1:3000/api/products/6444de0925312271d7f3079d
+GET http://127.0.0.1:3000/api/products/645ea4fb8e288d7a7c6a4246
 
 
 ###
-PUT http://127.0.0.1:3000/api/products/6444de0925312271d7f3079d
+PUT http://127.0.0.1:3000/api/products/64525eaa4954ed363089dbe1
 Content-Type: application/json
 
 {
@@ -52,5 +52,5 @@ Content-Type: application/json
   }
 }
 ###
-DELETE http://127.0.0.1:3000/api/products/6444de0925312271d7f3079d
+DELETE http://127.0.0.1:3000/api/products/64525eaa4954ed363089dbe1
 

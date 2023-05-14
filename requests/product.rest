@@ -1,0 +1,29 @@
+GET http://127.0.0.1:3000/api/products
+
+###
+POST http://127.0.0.1:3000/api/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.am9oblNtaXRoQGVtYWlsLmNvbQ.7n-6JB-xJTikGdLXGbRKMZdkiLNv-_pYaAEV0zpGHfU
+
+{
+    "name": "lexury product 2",
+    "unitPrice": 16,
+    "stock": 4,
+    "description": "This is product 10",
+    "images": "[\"https://example.com/product10/image1.jpg\", \"https://example.com/product10/image2.jpg\"]",
+    "catagory": "type 1"
+}
+
+### another user
+POST http://127.0.0.1:3000/api/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.c21pdGhAZW1haWwuY29t.mcVdNzGJ2iA3sXMH3VPvMqaePRn71cHv5fA88fMay14
+
+{
+    "name": "lexury product 98",
+    "unitPrice": 16,
+    "stock": 4,
+    "description": "This is product 10",
+    "images": "[\"https://example.com/product10/image1.jpg\", \"https://example.com/product10/image2.jpg\"]",
+    "catagory": "type 1"
+}

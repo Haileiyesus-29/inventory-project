@@ -1,0 +1,15 @@
+POST http://127.0.0.1:3000/api/users
+Content-Type: application/json
+
+{
+   "name":"Odegard",
+   "email":"smith@email.com",
+   "password":"superstrongpassword"
+}
+
+###
+GET http://127.0.0.1:3000/api/users/645f9805cb5b7cf841822bcf
+
+
+
+###

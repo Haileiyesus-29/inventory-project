@@ -1,11 +1,11 @@
-const request = require("supertest");
-const app = require("../app");
+const request = require('supertest')
+const app = require('../app/app')
 
-describe("Test the status of the server", () => {
-  test("it should return OK", () =>
-    request(app)
-      .get("/status")
-      .expect(200)
-      .expect("Content-Type", /json/)
-      .expect('{"status":"OK"}'));
-});
+describe('Test the status of the server', () => {
+   test('it should return OK', () =>
+      request(app)
+         .get('/status')
+         .expect(200)
+         .expect('Content-Type', /json/)
+         .expect('{"status":"OK"}'))
+})
