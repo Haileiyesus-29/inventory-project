@@ -1,5 +1,5 @@
 function clientErrorHanlder(err, req, res, next) {
-   // console.log(err.code)
+   console.log(err)
    switch (err.message) {
       case 'Not Found': {
          res.status(404).json(err)
@@ -14,23 +14,27 @@ function clientErrorHanlder(err, req, res, next) {
          break
       }
       default:
-         next(err)
+         res.status(500).json(err)
+      // next(err)
    }
 }
 
 function mongooseErrorHanlder(err, req, res, next) {
-   console.log(err.name)
    switch (err.name) {
       case 'MongoServerError': {
          res.status(409).json({
-            message: 'Email address is already in use',
-            status: 409,
+            error: {
+               message: 'Email address is already in use',
+               status: 409,
+            },
          })
          break
       }
-      case 'ValidationError': {
-         res.status(400).json({ message: 'Bad Request', status: 400 })
-         break
+      case 'ValidationError':
+      case 'CastError': {
+         res.status(400).json({
+            error: { message: 'Bad Request', status: 400 },
+         })
       }
       default:
          res.status(500).json({ Error: err })

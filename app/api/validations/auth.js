@@ -1,6 +1,7 @@
+require('express-async-errors')
+require('dotenv').config()
 const jwt = require('jsonwebtoken')
 const User = require('../models/usersDB')
-require('dotenv').config()
 
 async function verifyUser(req, res, next) {
    const authorization = req.headers['authorization']
@@ -10,12 +11,12 @@ async function verifyUser(req, res, next) {
       process.env.ACCESS_TOKEN_KEY,
       async (err, data) => {
          if (err) throw new Error({ message: 'Unauthorized', status: 401 })
-         const user = await User.findOne({ email: data.email }).exec()
-         return user
+         const tokenUser = await User.findOne({ email: data.email }).exec()
+         return tokenUser
       }
    )
    if (!user) throw new Error({ message: 'Unauthorized', status: 401 })
-   req.body.addedBy = user._id
+   req.user = user
    next()
 }
 

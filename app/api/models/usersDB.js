@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
 
 const userSchema = new mongoose.Schema({
    name: {
@@ -26,14 +25,4 @@ userSchema.set('toJSON', {
    },
 })
 
-// userSchema.pre('save', () => {
-//    bcrypt.genSalt(10, (err, salt) => {
-//       if (err) throw new Error(err)
-//       bcrypt.hash(this.password, salt, (err, hash) => {
-//          if (err) throw new Error(err)
-//          this.password = hash
-//          next()
-//       })
-//    })
-// })
 module.exports = mongoose.model('users', userSchema)
