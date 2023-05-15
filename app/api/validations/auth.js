@@ -5,18 +5,25 @@ require('dotenv').config()
 async function verifyUser(req, res, next) {
    const authorization = req.headers['authorization']
    const token = authorization.split(' ')[1]
+   let message = 'Unauthorized'
+   let status = 401
    const user = await jwt.verify(
       token,
       process.env.ACCESS_TOKEN_KEY,
       async (err, data) => {
-         if (err) throw new Error(err)
-         console.log(data)
-         const user = await User.findOne({ email: data }).exec()
-         return user
+         if (err) {
+            message = 'Bad Request'
+            status = 400
+            return
+         }
+         const tokenUser = await User.findById(data.id)
+         if (!tokenUser) return
+         return tokenUser
       }
    )
-   if (!user) throw new Error({ message: 'anauthorized' })
-   req.body.addedBy = user._id
+
+   if (!user) return next({ message, status })
+   req.user = user
    next()
 }
 
