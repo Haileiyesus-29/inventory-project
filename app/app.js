@@ -4,7 +4,7 @@ const express = require('express')
 const cors = require('cors')
 const {
    clientErrorHanlder,
-   mongooseErrorHanlder,
+   serverErrorHandler,
 } = require('./api/middlewares/errorHandler')
 
 const app = express()
@@ -24,12 +24,7 @@ app.get('/status', (req, res) => {
    res.status(200).json({ status: 'OK' })
 })
 
-app.use((req, res) => {
-   res.status(404).json({ status: 'NOT FOUND' })
-})
-
-// Error handling middlewares
 app.use(clientErrorHanlder)
-app.use(mongooseErrorHanlder)
+app.use(serverErrorHandler)
 
 module.exports = app

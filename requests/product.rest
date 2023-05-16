@@ -3,11 +3,7 @@ GET http://127.0.0.1:3000/api/products
 ###
 POST http://127.0.0.1:3000/api/products
 Content-Type: application/json
-<<<<<<< HEAD
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZW1haWwuY29tIiwiaWF0IjoxNjg0MDgzMjMxfQ.drc0sftAN_ixSzFuRIJkRQJBJPtZ3ZbXmoSekzMqAVU
-=======
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNGYzM2JlNzY2ZmZhYWJkNjQ1MSIsImlhdCI6MTY4NDE0OTQ5MX0.t7a_CF1rntYA7HCaskgVseH6oI2_rBdMKYwx7NdOdPk
->>>>>>> inv_api
 
 {
     "name": "lexury product 2",
@@ -21,11 +17,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNGYzM
 ### another user
 POST http://127.0.0.1:3000/api/products
 Content-Type: application/json
-<<<<<<< HEAD
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbWVvbmVAZW1haWwuY29tIiwiaWF0IjoxNjg0MDgzMjU4fQ.kI5WJyBSSZuXIBZgqn7z7UjsHoEzMN7jKKJDCLP90gM
-=======
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2OWVjOTE4YzIwMTJkNzIwOSIsImlhdCI6MTY4NDE0OTY4Nn0.5MDd_eiOG8n3DhKKSQL_7uyVFVW6Nr-bub-1rPrNxmo
->>>>>>> inv_api
 
 {
     "name": "lexury product 9n",
@@ -36,15 +28,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2O
     "catagory": "type 1n"
 }
 ### update by valid user
-<<<<<<< HEAD
-PUT http://127.0.0.1:3000/api/products/64611549973e352b03215362
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZW1haWwuY29tIiwiaWF0IjoxNjg0MDgzMjMxfQ.drc0sftAN_ixSzFuRIJkRQJBJPtZ3ZbXmoSekzMqAVU
-=======
 PUT http://127.0.0.1:3000/api/products/64621cf3b360e874a4e0e101
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2OWVjOTE4YzIwMTJkNzIwOSIsImlhdCI6MTY4NDE0OTY4Nn0.5MDd_eiOG8n3DhKKSQL_7uyVFVW6Nr-bub-1rPrNxmo
->>>>>>> inv_api
 
 {
     "name": "lexury product bb",
@@ -57,15 +43,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2O
 
 
 ### update by invalid user
-<<<<<<< HEAD
-PUT http://127.0.0.1:3000/api/products/64611549973e352b03215362
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbWVvbmVAZW1haWwuY29tIiwiaWF0IjoxNjg0MDgzMjU4fQ.kI5WJyBSSZuXIBZgqn7z7UjsHoEzMN7jKKJDCLP90gM
-=======
 PUT http://127.0.0.1:3000/api/products/64621e95f10bd04d2b1754fa
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2OWVjOTE4YzIwMTJkNzIwOSIsImlhdCI6MTY4NDE0OTY4Nn0.5MDd_eiOG8n3DhKKSQL_7uyVFVW6Nr-bub-1rPrNxmo
->>>>>>> inv_api
 
 {
     "name": "lexury product bb",
@@ -78,17 +58,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2O
 
 
 
-<<<<<<< HEAD
-### 
-DELETE  http://127.0.0.1:3000/api/products/646118e032262892a4da6840
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZW1haWwuY29tIiwiaWF0IjoxNjg0MDgzMjMxfQ.drc0sftAN_ixSzFuRIJkRQJBJPtZ3ZbXmoSekzMqAVU
-=======
 ### delete
 DELETE  http://127.0.0.1:3000/api/products/64621cf3b360e874a4e0e101
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2OWVjOTE4YzIwMTJkNzIwOSIsImlhdCI6MTY4NDE0OTY4Nn0.5MDd_eiOG8n3DhKKSQL_7uyVFVW6Nr-bub-1rPrNxmo
->>>>>>> inv_api
 
 {
     "name": "lexury product 98",
