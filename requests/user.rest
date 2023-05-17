@@ -2,9 +2,9 @@ POST http://127.0.0.1:3000/api/users
 Content-Type: application/json
 
 {
-   "name":"John kadjf",
-   "email":"emeel@email.com",
-   "password": "password"
+   "name":"John wick",
+   "email":"email@email.com",
+   "password": "strongpassword"
 }
 
 ###
@@ -12,8 +12,8 @@ POST http://127.0.0.1:3000/api/users/login
 Content-Type: application/json
 
 {
-   "email":"eml@email.com",
-   "password": "password"
+   "email":"email@email.com",
+   "password": "strongpassword"
 }
 
 ###
