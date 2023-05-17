@@ -4,10 +4,15 @@ const statusObject = require('../helpers/statusObject')
 
 // Public
 const getAllProduct = async (req, res, next) => {
-   const productList = await Product.find().populate({
-      path: 'addedBy',
-      select: 'name email _id',
-   })
+   const skip = req.query.skip || 0
+   const limit = req.query.limit || 5
+   const productList = await Product.find()
+      .populate({
+         path: 'addedBy',
+         select: 'name email _id',
+      })
+      .skip(skip)
+      .limit(limit)
    res.status(200).json(productList)
 }
 

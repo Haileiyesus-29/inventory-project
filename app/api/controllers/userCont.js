@@ -23,7 +23,21 @@ const createUser = async (req, res, next) => {
    res.status(201).json({ token })
 }
 
+const login = async (req, res, next) => {
+   let { email, password } = req.body
+   if (!email || !password) return next(statusObject(400))
+
+   const user = await User.findOne({ email })
+   if (!user) return next(statusObject(404))
+
+   const isValidUser = await bcrypt.compare(password, user.password)
+   if (!isValidUser) return next(statusObject(404))
+   const token = jwt.sign({ id: user._id }, process.env.ACCESS_TOKEN_KEY)
+   res.status(200).json({ token })
+}
+
 module.exports = {
    getUserById,
    createUser,
+   login,
 }

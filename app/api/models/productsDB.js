@@ -26,6 +26,7 @@ const productsSchema = new mongoose.Schema({
    },
 })
 
+productsSchema.set('versionKey', false)
 productsSchema.set('toJSON', {
    transform: (_, obj) => {
       obj.id = obj._id
