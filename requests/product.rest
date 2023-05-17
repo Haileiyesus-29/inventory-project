@@ -1,15 +1,22 @@
 GET http://127.0.0.1:3000/api/products
 
+
+
+###
+GET http://127.0.0.1:3000/api/products/64638433b92baf590d7dd810
+
+
+
 ###
 POST http://127.0.0.1:3000/api/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNGYzM2JlNzY2ZmZhYWJkNjQ1MSIsImlhdCI6MTY4NDE0OTQ5MX0.t7a_CF1rntYA7HCaskgVseH6oI2_rBdMKYwx7NdOdPk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjRjM2MxNjU2NzEzMDZmZDdiMDRmOSIsImlhdCI6MTY4NDMyNTMxM30.y2lLODWb3ZmUsKi8r7ubWoYwhjqNZ59gowqMTwtXdy4
 
 {
-    "name": "lexury product 2",
+    "name": "newest product",
     "unitPrice": 16,
     "stock": 4,
-    "description": "This is product 10",
+    "description": "This is sdfaf 10",
     "images": "[\"https://example.com/product10/image1.jpg\", \"https://example.com/product10/image2.jpg\"]",
     "catagory": "type 1"
 }
@@ -17,7 +24,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNGYzM
 ### another user
 POST http://127.0.0.1:3000/api/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2OWVjOTE4YzIwMTJkNzIwOSIsImlhdCI6MTY4NDE0OTY4Nn0.5MDd_eiOG8n3DhKKSQL_7uyVFVW6Nr-bub-1rPrNxmo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjNjMDdkNDg1ZmEzMDcwOTdkMzgyMSIsImlhdCI6MTY4NDI1ODk0MX0.ZdyTw6JXAENbQAa8NQyfK9popxGVF81qwj2mAa3egJQ
 
 {
     "name": "lexury product 9n",
@@ -28,9 +35,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2O
     "catagory": "type 1n"
 }
 ### update by valid user
-PUT http://127.0.0.1:3000/api/products/64621cf3b360e874a4e0e101
+PUT http://127.0.0.1:3000/api/products/6464c44d65671306fd7b04ff
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2OWVjOTE4YzIwMTJkNzIwOSIsImlhdCI6MTY4NDE0OTY4Nn0.5MDd_eiOG8n3DhKKSQL_7uyVFVW6Nr-bub-1rPrNxmo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjRjM2MxNjU2NzEzMDZmZDdiMDRmOSIsImlhdCI6MTY4NDMyNTMxM30.y2lLODWb3ZmUsKi8r7ubWoYwhjqNZ59gowqMTwtXdy4
+
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjNjMThmNDg1ZmEzMDcwOTdkMzgyYiIsImlhdCI6MTY4NDI1OTIxNX0.HxlATayOvmKmCWwGwstWBUuOxKh3Ee24IPwstBgXBqA
 
 {
     "name": "lexury product bb",
@@ -43,9 +52,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2O
 
 
 ### update by invalid user
-PUT http://127.0.0.1:3000/api/products/64621e95f10bd04d2b1754fa
+PUT http://127.0.0.1:3000/api/products/646215499ec918c2012d71ee
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2OWVjOTE4YzIwMTJkNzIwOSIsImlhdCI6MTY4NDE0OTY4Nn0.5MDd_eiOG8n3DhKKSQL_7uyVFVW6Nr-bub-1rPrNxmo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjNjMWY3NDg1ZmEzMDcwOTdkMzgzNSIsImlhdCI6MTY4NDI1OTMxOX0.SY9kQ3-jySYYbwXb4A-EJ19edKOzJhcOcWNm9dik-vg
 
 {
     "name": "lexury product bb",
@@ -58,10 +67,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2O
 
 
 
-### delete
-DELETE  http://127.0.0.1:3000/api/products/64621cf3b360e874a4e0e101
+### 
+DELETE  http://127.0.0.1:3000/api/products/6464c44d65671306fd7b04ff
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2OWVjOTE4YzIwMTJkNzIwOSIsImlhdCI6MTY4NDE0OTY4Nn0.5MDd_eiOG8n3DhKKSQL_7uyVFVW6Nr-bub-1rPrNxmo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjRjM2MxNjU2NzEzMDZmZDdiMDRmOSIsImlhdCI6MTY4NDMyNTMxM30.y2lLODWb3ZmUsKi8r7ubWoYwhjqNZ59gowqMTwtXdy4
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZW1haWwuY29tIiwiaWF0IjoxNjg0MDgzMjMxfQ.drc0sftAN_ixSzFuRIJkRQJBJPtZ3ZbXmoSekzMqAVU
 
 {
     "name": "lexury product 98",
@@ -71,5 +81,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjIxNWI2O
     "images": "[\"https://example.com/product10/image1.jpg\", \"https://example.com/product10/image2.jpg\"]",
     "catagory": "type 1"
 }
-
 

@@ -6,4 +6,6 @@ routes.get('/:id', userCont.getUserById)
 
 routes.post('/', userCont.createUser)
 
+routes.post('/login', userCont.login)
+
 module.exports = routes

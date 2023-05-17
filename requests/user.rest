@@ -2,13 +2,33 @@ POST http://127.0.0.1:3000/api/users
 Content-Type: application/json
 
 {
-   "name":"some person",
-   "email":"otheremail24@email.com",
-   "password":"superstrongpassword"
+   "name":"John kadjf",
+   "email":"emeel@email.com",
+   "password": "password"
 }
 
 ###
-GET http://127.0.0.1:3000/api/users/64620edb9af0c6aa7d2ef3b2
+POST http://127.0.0.1:3000/api/users/login
+Content-Type: application/json
+
+{
+   "email":"eml@email.com",
+   "password": "password"
+}
+
+###
+POST http://127.0.0.1:3000/api/users
+Content-Type: application/json
+
+{
+   "name":"Some One",
+   "email":"someonddafdae44ee@email.com",
+   "password": "somepassword"
+}
+
+###
+GET http://127.0.0.1:3000/api/users/6460fc09b9abd3cfefeab010
+
 
 
 

@@ -19,7 +19,26 @@ function clientErrorHanlder(err, req, res, next) {
 }
 
 function serverErrorHandler(err, req, res, next) {
-   res.status(500).json(err)
+   // console.log(err.name)
+   switch (err.name) {
+      case 'MongoServerError':
+         return res
+            .status(409)
+            .json({ error: { ok: false, message: 'duplicated', status: 409 } })
+      case 'CastError':
+      case 'ValidationError':
+         return res
+            .status(400)
+            .json({ error: { ok: false, message: 'Bad Request', status: 400 } })
+      default:
+         res.status(500).json({
+            error: {
+               ok: false,
+               message: 'Internal server failure',
+               status: 500,
+            },
+         })
+   }
 }
 
 module.exports = {
